@@ -1,0 +1,16 @@
+<% provide(:title, "New Search") %>
+
+<h1>New Search</h1>
+
+<%= form_for :search, url: user_searches_path(current_user.id) do |f| %>
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+
+	<%= f.label :location, value: "Home Location" %>
+	<%= f.text_field :location %>
+
+	<%= f.label :query %>
+	<%= f.text_field :query %>
+
+	<%= f.submit "Submit" %>
+<% end %>

@@ -25,7 +25,7 @@ def get_hits_in_nearby_cities ( home_city_plaintext )
 	nearby_cities = get_nearby_cities(Nokogiri::HTML(open(home_city_homepage)))
 	list_of_hits = []
 	nearby_cities.each do |city|
-		doc = Nokogiri::HTML(open("http://#{city}.craigslist.org/search/cto?query=scirocco&srchType=T&minAsk=300&maxAsk=6000")) do |config|
+		doc = Nokogiri::HTML(open("http://#{city}.craigslist.org/search/cto?query=datsun&srchType=T&minAsk=300&maxAsk=1500")) do |config|
 			config.nonet
 		end
 		doc.css(".row .hdrlnk").each do |f|

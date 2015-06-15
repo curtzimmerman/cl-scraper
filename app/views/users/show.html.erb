@@ -1,3 +1,6 @@
 <% provide(:title, current_user.email) %>
 
 <h1>Searches</h1>
+
+<%= link_to "New Search", new_user_search_path(@user.id) %>
+<%= render partial: "searches/search", collection: @user.searches %>
