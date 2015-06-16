@@ -1,0 +1,10 @@
+<% provide(:title, @search.title.titleize) %>
+
+<h1> <%= @search.title.titleize %> </h1>
+
+<table>
+	<th>Title</th>
+	<th>Price</th>
+	<th>Neighborhood</th>
+	<%= render partial: 'hits/hit', collection: @search.hits %>
+</table>

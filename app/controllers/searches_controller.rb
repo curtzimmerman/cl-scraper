@@ -1,5 +1,5 @@
 class SearchesController < ApplicationController
-
+	before_action :logged_in_user
 
 	def new
 		@search = current_user.searches.build
@@ -14,6 +14,10 @@ class SearchesController < ApplicationController
 		else
 			render 'new'
 		end
+	end
+
+	def show
+		@search = Search.find_by(id: params[:id])
 	end
 
 
