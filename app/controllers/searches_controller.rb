@@ -1,6 +1,9 @@
 class SearchesController < ApplicationController
+
+
 	def new
 		@search = current_user.searches.build
+		@search_city_options = City.in_order.all.map{ |a| [a.name, a.id] }
 	end
 
 	def create
