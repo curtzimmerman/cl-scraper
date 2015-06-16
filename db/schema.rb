@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150616123248) do
+ActiveRecord::Schema.define(version: 20150616134423) do
 
   create_table "cities", force: :cascade do |t|
     t.string   "name"
@@ -30,6 +30,14 @@ ActiveRecord::Schema.define(version: 20150616123248) do
     t.datetime "updated_at",   null: false
   end
 
+  create_table "nearby_cities", id: false, force: :cascade do |t|
+    t.integer "home_city_id"
+    t.integer "city_id"
+  end
+
+  add_index "nearby_cities", ["city_id"], name: "index_nearby_cities_on_city_id"
+  add_index "nearby_cities", ["home_city_id"], name: "index_nearby_cities_on_home_city_id"
+
   create_table "searches", force: :cascade do |t|
     t.string   "title"
     t.string   "query"
@@ -38,6 +46,8 @@ ActiveRecord::Schema.define(version: 20150616123248) do
     t.integer  "user_id"
     t.integer  "location"
   end
+
+  add_index "searches", ["user_id"], name: "user_id_ix"
 
   create_table "users", force: :cascade do |t|
     t.string   "email"
