@@ -9,6 +9,6 @@ class CreateCities < ActiveRecord::Migration
 
     remove_column :searches, :location
     remove_column :searches, :location_code
-    add_column :searches, :location, :integer
+    add_column :searches, :city_id, :integer
   end
 end

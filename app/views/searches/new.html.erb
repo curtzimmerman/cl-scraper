@@ -6,8 +6,8 @@
 	<%= f.label :title %>
 	<%= f.text_field :title %>
 
-	<%= f.label :location, value: "Home Location" %>
-	<%= f.select :location , options_for_select(@search_city_options) %>
+	<%= f.label :city_id, value: "Home Location" %>
+	<%= f.select :city_id , options_for_select(@search_city_options) %>
 
 	<%= f.label :query %>
 	<%= f.text_field :query %>

@@ -1,5 +1,6 @@
 class SearchesController < ApplicationController
 	before_action :logged_in_user
+	before_action :update_hits, only: :show
 
 	def new
 		@search = current_user.searches.build
@@ -24,6 +25,12 @@ class SearchesController < ApplicationController
 	private
 
 		def search_params
-			params.require(:search).permit(:title, :location, :query)
+			params.require(:search).permit(:title, :city_id, :query)
 		end
+
+		def update_hits
+			@search = Search.find(params[:id])
+			@search.update_hits
+		end
+
 end
