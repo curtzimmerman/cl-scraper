@@ -20,6 +20,11 @@ ActiveRecord::Schema.define(version: 20150619194410) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "city_relationships", id: false, force: :cascade do |t|
+    t.integer "city_id"
+    t.integer "nearby_city_id"
+  end
+
   create_table "hits", force: :cascade do |t|
     t.integer  "search_id"
     t.string   "url"
@@ -28,12 +33,6 @@ ActiveRecord::Schema.define(version: 20150619194410) do
     t.string   "neighborhood"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.string   "location"
-  end
-
-  create_table "nearby_cities", id: false, force: :cascade do |t|
-    t.integer "city_id"
-    t.integer "nearby_city_id"
   end
 
   create_table "searches", force: :cascade do |t|
