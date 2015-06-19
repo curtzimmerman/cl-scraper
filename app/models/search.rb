@@ -9,7 +9,7 @@ class Search < ActiveRecord::Base
 
 	def update_hits
 		#"http://#{city}.craigslist.org/search/cto?query=datsun&srchType=T&minAsk=300&maxAsk=1500"
-		foo = "#{self.city.url}/search/cto?query=#{self.query.tr(" ", "+")}"
-		binding.pry
+		url = "#{self.city.url}/search/cto?query=#{self.query.tr(" ", "+")}"
+
 	end
 end
