@@ -9,7 +9,21 @@ class Search < ActiveRecord::Base
 
 	def update_hits
 		#"http://#{city}.craigslist.org/search/cto?query=datsun&srchType=T&minAsk=300&maxAsk=1500"
-		url = "#{self.city.url}/search/cto?query=#{self.query.tr(" ", "+")}"
+		query_url = "/search/cto?query=#{self.query.tr(" ", "+")}"
+		search_cities = self.city + self.city.nearby_cities
+		search_cities.each do |city|
+			hitlist = self.hits
+			url = city.url + query_url
+			doc = Nokogiri::HTML(open(url))
+			doc.css("div.rightpane div.content p.row").each do |row|
+				if !self.hits.pluck('data_pid').include?(row['data-pid'])
+					self.hit.build(
+						url: city.url +  )
+				#if the posting id is in hitlist
+					#set hitlist[hit][posting_id, true]
+			#end
+			#delete search.hits where bool = false 
+
 
 	end
 end

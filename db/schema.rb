@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150619194410) do
+ActiveRecord::Schema.define(version: 20150620162229) do
 
   create_table "cities", force: :cascade do |t|
     t.string   "name"
@@ -31,8 +31,10 @@ ActiveRecord::Schema.define(version: 20150619194410) do
     t.string   "title"
     t.integer  "price"
     t.string   "neighborhood"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.boolean  "checked",      default: false
+    t.string   "data_pid"
   end
 
   create_table "searches", force: :cascade do |t|
