@@ -2,4 +2,5 @@
 	<td><%= link_to search.title, user_search_path(params[:id], search.id) %></td>
 	<td><%= get_name_by_id(search.city) %></td>
 	<td><%= search.query %></td>
+	<td><%= link_to "Delete?", user_search_path(params[:id], search.id), method: :delete %></td>
 </tr>
