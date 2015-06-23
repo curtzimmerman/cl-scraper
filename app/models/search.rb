@@ -29,7 +29,7 @@ class Search < ActiveRecord::Base
 			if current_hits.nil? || !current_hits.include?(row['data-pid'])
 				self.hits.create(
 					data_pid: row['data-pid'],
-					url: Hit.format_hit_url(city, row.css('a')[0]['href']), 
+					url: Hit.format_hit_url(city.url, row.css('a')[0]['href']), 
 					title: row.css('a.hdrlnk')[0].text,
 					price: row.css('span.txt span.l2 span.price').text.tr("$", "").to_i,
 					neighborhood: row.css('span.txt span.l2 span.pnr small').text,
