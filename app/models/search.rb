@@ -4,14 +4,14 @@ class Search < ActiveRecord::Base
 	belongs_to :user 
 	belongs_to :city
 	has_many :hits
-	has_many :categories
+	belongs_to :category
 
 	validates :title, presence: true, length: { maximum: 50 }
 	validates :city, presence: true
 	validates :query, presence: true, length: { maximum: 255 }
 
-	def self.format_query_for_url(city_url, search_query)
-		"#{city_url}/search/cto?query=#{search_query.tr(" ", "+")}"
+	def self.format_query_for_url(city_url, search_category, search_query)
+		"#{city_url}/search/#{search_category}?query=#{search_query.tr(" ", "+")}"
 	end
 
 	def refresh
@@ -24,7 +24,8 @@ class Search < ActiveRecord::Base
 	end
 
 	def update_hits(city)
-		doc = Nokogiri::HTML(open(Search.format_query_for_url(city.url, self.query)))
+		c = self.category.code
+		doc = Nokogiri::HTML(open(Search.format_query_for_url(city.url, c, self.query)))
 		current_hits = self.hits.pluck('data_pid')
 		doc.css("div.rightpane div.content p.row").each do |row|
 			if current_hits.nil? || !current_hits.include?(row['data-pid'])

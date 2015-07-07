@@ -5,6 +5,7 @@ class SearchesController < ApplicationController
 	def new
 		@search = current_user.searches.build
 		@search_city_options = City.in_order.all.map{ |a| [a.name, a.id] }
+		@search_category_options = Category.in_order.all.map{ |a| [a.name, a.id] }
 	end
 
 	def create
@@ -32,7 +33,7 @@ class SearchesController < ApplicationController
 	private
 
 		def search_params
-			params.require(:search).permit(:title, :city_id, :query).merge(url: "#{City.find(params[:search][:city_id]).url}/search/cto?query=#{params[:search][:query].tr(" ", "+")}")
+			params.require(:search).permit(:title, :category_id, :city_id, :query).merge(url: "#{City.find(params[:search][:city_id]).url}/search/#{Category.find(params[:search][:category_id]).code}?query=#{params[:search][:query].tr(" ", "+")}")
 		end
 
 		def update_hits

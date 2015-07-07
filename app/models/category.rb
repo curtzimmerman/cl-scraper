@@ -1,3 +1,5 @@
 class Category < ActiveRecord::Base
-	belongs_to :search
+	has_many :searches
+
+	scope :in_order, -> { order(name: :asc) }
 end
