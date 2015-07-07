@@ -4,6 +4,7 @@ class Search < ActiveRecord::Base
 	belongs_to :user 
 	belongs_to :city
 	has_many :hits
+	has_many :categories
 
 	validates :title, presence: true, length: { maximum: 50 }
 	validates :city, presence: true
