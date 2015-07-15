@@ -1,20 +1,17 @@
-<header>
-	<div class="container">
-	<%= link_to "CLSCRPR", root_path, id: "logo" %>
+<header class="main-header">
+	<div>
+	<%= link_to "Craigslist Scraper", root_path, id: "logo" %>
 		<nav>
-			<ul>
-				<% if logged_in? %>
-					<li><%= link_to "Searches", user_path(current_user) %></li>
-					<li>
-						<%= link_to "Log out", logout_path, method: :delete %> - 
-						<%= @current_user.email %>						
-					</li>
-				<% else %>
-					<li><%= link_to "Log in", login_path %></li>
-				<% end %>
-				<li><%= link_to "Home", root_path %></li>
-				<li><%= link_to "Help", help_path %></li>
-			</ul>
+			<%= link_to "Home", root_path %>
+			<%= link_to "Help", help_path %>
+			<% if logged_in? %>
+				<%= link_to "Searches", user_path(current_user) %>
+				<%= link_to "Log out", logout_path, method: :delete %> - 
+				<%= @current_user.email %>
+			<% else %>
+				<%= link_to "Log in", login_path %>
+			<% end %>
+			
 		</nav>
 	</div>
 </header>
