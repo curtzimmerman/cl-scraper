@@ -1,8 +1,9 @@
 <% provide(:title, @search.title.titleize) %>
 
-<h1 class="heading center"> <%= @search.title.titleize %> </h1>
-
 <div class="content">
+	<h1 class="heading center"> <%= @search.title.titleize %> </h1>
+	<%= link_to "Back to Searches...", user_searches_path, class: "subheading" %>
+
 	<table>
 		<th>Title</th>
 		<th>Price</th>

@@ -1,29 +1,32 @@
 /* style ==================================*/
 
+* {
+	font-family: helvetica, sans-serif;
+}
+
+body {
+	background-image: url('/assets/footer_lodyas.png');
+}
+
 .container {
 	margin: 0;
-	background: lightblue;
 }
 
 a {
 	text-decoration: none;
-	color: blue;
+	color: #456485;
 }
 
 a:hover {
 	text-decoration: underline;
 }
 
-.main-header {
-	padding: 1em 1em;
-	background: lightgrey;
+.main-header {	
+	padding: .5em .5em;
 	border-bottom: 1px solid #444;
-	font-family: helvetica, sans-serif;
 	font-size: 1.25em;
-}
-
-.heading {
-	text-align: center;
+	background: #d7d7d7;
+	box-shadow: 0 4px 3px -4px #000;
 }
 
 .center {
@@ -40,10 +43,27 @@ nav {
 	width: 80%;
 	margin: 1em 10%;
 	border: 1px solid #444;
-	background: white;
+	background: #d7d7d7;
+	box-shadow: 0 8px 3px -4px #000;
+	.heading {
+		text-align: center;
+	}
+	.subheading {
+		text-align: center;
+		font-size: 1em;
+	}
 }
 
 .searches {
 	margin: 0 .25em 1em;
 	padding: 1em 1em;
+}
+
+table {
+	border: 1px solid black;
+	width: 100%;
+}
+
+td {
+	padding: .25em;
 }
