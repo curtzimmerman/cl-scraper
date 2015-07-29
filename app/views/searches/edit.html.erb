@@ -1,0 +1,7 @@
+<% provide(:title, "Edit Search") %>
+
+<h1>Edit Search</h1>
+
+<%= form_for :search, url: user_search_path(current_user.id, @search.id), method: :patch do |f| %>
+	<%= render partial: "search_form", locals: { f: f } %>
+<% end %>

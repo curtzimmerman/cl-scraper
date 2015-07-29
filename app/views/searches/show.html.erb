@@ -1,6 +1,7 @@
 <% provide(:title, @search.title.titleize) %>
 
 <h1> <%= @search.title.titleize %> </h1>
+<%= link_to "Edit..", edit_user_search_path(current_user.id, @search.id) %>
 
 <table>
 	<th>Title</th>

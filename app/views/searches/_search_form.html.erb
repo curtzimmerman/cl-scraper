@@ -1,0 +1,13 @@
+<%= f.label :title %>
+<%= f.text_field :title %>
+
+<%= f.label :category_id %>
+<%= f.select :category_id, options_for_select(@search_category_options) %>
+
+<%= f.label :city_id, value: "Home Location" %>
+<%= f.select :city_id , options_for_select(@search_city_options) %>
+
+<%= f.label :query %>
+<%= f.text_field :query %>
+
+<%= f.submit "Submit" %>
