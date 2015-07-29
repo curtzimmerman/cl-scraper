@@ -40,6 +40,7 @@ class SearchesController < ApplicationController
 
 		if @search.changed?
 			if @search.save
+				@search.city.get_nearby if @search.city.nearby_cities.empty?
 				flash[:success] = "Updated"
 				redirect_to user_search_path(current_user.id, @search.id)
 				#delete all prior hits for search
@@ -48,10 +49,13 @@ class SearchesController < ApplicationController
 				render 'edit'
 			end
 		end
-
-
 	end
 
+	def update_hits
+			@search = Search.find(params[:search_id])
+			@search.refresh
+			redirect_to user_search_path(current_user.id, @search.id)
+	end
 
 	private
 
@@ -59,9 +63,6 @@ class SearchesController < ApplicationController
 			params.require(:search).permit(:title, :category_id, :city_id, :query).merge(url: "#{City.find(params[:search][:city_id]).url}/search/#{Category.find(params[:search][:category_id]).code}?query=#{params[:search][:query].tr(" ", "+")}")
 		end
 
-		def update_hits
-			@search = Search.find(params[:id])
-			@search.refresh
-		end
+		
 
 end

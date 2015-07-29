@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   root 'static_pages#home'
 
   resources :users do 
-    resources :searches
+    resources :searches do
+    	post :update_hits
+    end
   end
 
   get "signup" => "users#new"
