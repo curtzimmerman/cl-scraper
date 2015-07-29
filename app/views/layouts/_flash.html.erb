@@ -1,3 +1,3 @@
 <% flash.each do |type, message| %>
-	<%= message %>
+	<%= content_tag :div, message, class: "alert center #{type}" %>
 <% end %>
