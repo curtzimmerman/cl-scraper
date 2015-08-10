@@ -24,8 +24,7 @@ class Search < ActiveRecord::Base
 	end
 
 	def update_hits(city)
-		c = self.category.code
-		doc = Nokogiri::HTML(open(Search.format_query_for_url(city.url, c, self.query)))
+		doc = Nokogiri::HTML(open(Search.format_query_for_url(city.url, self.category.code, self.query)))
 		current_hits = self.hits.pluck('data_pid')
 		doc.css("div.rightpane div.content p.row").each do |row|
 			if current_hits.nil? || !current_hits.include?(row['data-pid'])
