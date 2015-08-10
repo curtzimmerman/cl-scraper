@@ -12,18 +12,6 @@
 		<%= render 'layouts/header' %>
 	</div>
 	<%= render 'layouts/flash' %>
-<<<<<<< Updated upstream
-
-	<div class="content bg">
-		<%= yield %>
-	</div>
-	<div class="params">
-		<%= debug(params) if Rails.env.development? %>
-	</div>
-	<div class="footer">
-		<%= render 'layouts/footer' %>
-	</div>
-=======
 	<%= yield %>
 	<div class="params">
 		<%= debug(params) if Rails.env.development? %>
@@ -31,6 +19,5 @@
 	<div class="footer">
 		<%= render 'layouts/footer' %>
 	</div>
->>>>>>> Stashed changes
 </body>
 </html>
