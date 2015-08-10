@@ -1,13 +1,20 @@
 /* style ==================================*/
 
+<<<<<<< Updated upstream
+=======
 * {
 	font-family: helvetica, sans-serif;
 }
 
+>>>>>>> Stashed changes
 html,
 body {
 	margin: 0;
 	padding: 0;
+<<<<<<< Updated upstream
+	font-family: 'Roboto', sans-serif;
+=======
+>>>>>>> Stashed changes
 }
 
 .container {
@@ -44,7 +51,11 @@ a:hover {
 	}
 }
 
+<<<<<<< Updated upstream
+.bg {
+=======
 .landing {
+>>>>>>> Stashed changes
 	position: fixed;
 	top: 0;
 	left:0;
@@ -52,6 +63,21 @@ a:hover {
 	height: 1000px;
 	background: url('/assets/Honda_600_in_2014.JPG');
 	background-size: cover;
+<<<<<<< Updated upstream
+	z-index: -10;
+}
+
+.greeting {
+	width: 75%;
+	height: 300px;
+	margin: 200px auto;
+	background: #222;
+	padding: 20px 20px 40px;
+	opacity: .85;
+}
+
+.heading {
+=======
 	filter: blur(1px);
 	z-index: -10;
 }
@@ -62,6 +88,7 @@ a:hover {
 	background: #323232;
 	padding: 20px;
 	.heading {
+>>>>>>> Stashed changes
 		text-align: center;
 		color:white;
 		font-weight: normal;
@@ -69,13 +96,20 @@ a:hover {
 
 	}
 	.subheading {
+<<<<<<< Updated upstream
+		display: block;
+		margin: auto;
+=======
 
+>>>>>>> Stashed changes
 		text-align: center;
 		color:white;
 		font-weight: normal;
 		letter-spacing: .1em;
 	}
-}
+	a.subheading {
+			margin-top: 50px;
+		}
 
 .searches {
 	margin: 0 .25em 1em;
@@ -95,4 +129,28 @@ td {
 .alert {
 	border: 1px solid black;
 	background: #d7d7d7;
+}
+
+/* params and footer */
+.params {
+	display: block;
+	float: clear;
+	position: fixed;
+	bottom: 40px;
+	background: white;
+	width: 50%;
+	height: auto;
+	left: 25%;
+	right: 25%;
+	border: 1px solid black;
+}
+
+.footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	height: 40px;
+	width: 100%;
+	z-index: 10;
+	background: white;
 }

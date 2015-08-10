@@ -2,12 +2,22 @@
 
 <div class="landing">
 </div>
+<<<<<<< Updated upstream
+<div class="greeting">
+=======
 <div class="content">
+>>>>>>> Stashed changes
 	<h1 class="heading">Craigslist Scraper</h1>
 	<h2 class="subheading">Enter some searches, get emailed about new posts in your area</h2>
-
 	<% if !logged_in? %>
 		<%= link_to "Log In", login_path %>
 		<%= link_to "Sign Up!", signup_path %>
+	<% else %>
+		<%= link_to "Go to searches", user_path(current_user.id), class: "subheading" %>
 	<% end %>
 </div>
+<<<<<<< Updated upstream
+<div class="information">
+</div>
+=======
+>>>>>>> Stashed changes
