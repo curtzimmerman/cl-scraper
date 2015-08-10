@@ -11,7 +11,11 @@ class Search < ActiveRecord::Base
 	validates :query, presence: true, length: { maximum: 255 }
 
 	def self.format_query_for_url(city_url, search_category, search_query)
-		"#{city_url}/search/#{search_category}?query=#{search_query.tr(" ", "+")}"
+		url = "#{city_url}/search/#{search_category}?" #"query=#{search_query.tr(" ", "+")}"
+		search_query.each do |key, value|
+			url += "&#{key}=#{value}"
+		end
+		url.tr(" ", "+")
 	end
 
 	def refresh
@@ -24,7 +28,7 @@ class Search < ActiveRecord::Base
 	end
 
 	def update_hits(city)
-		doc = Nokogiri::HTML(open(Search.format_query_for_url(city.url, self.category.code, self.query)))
+		doc = Nokogiri::HTML(open(Search.format_query_for_url(city.url, self.category.code, self.parameters_for_search_url)))
 		current_hits = self.hits.pluck('data_pid')
 		doc.css("div.rightpane div.content p.row").each do |row|
 			if current_hits.nil? || !current_hits.include?(row['data-pid'])
@@ -39,6 +43,10 @@ class Search < ActiveRecord::Base
 				Hit.find_by(url: Hit.format_hit_url(city.url, row.css('a')[0]['href'])).update_attribute(:checked, true)
 			end
 		end
+	end
+
+	def parameters_for_search_url
+		{ query: self.query, min_price: self.min_price, max_price: self.max_price }
 	end
 
 	

@@ -10,7 +10,6 @@ class SearchesController < ApplicationController
 	def create
 		@search = current_user.searches.build(search_params)
 		if @search.save
-			@search.generate_url
 			@search.city.get_nearby if @search.city.nearby_cities.empty? 
 			flash[:success] = "Search created"
 			redirect_to current_user
@@ -41,7 +40,6 @@ class SearchesController < ApplicationController
 
 		if @search.changed?
 			if @search.save
-				@search.generate_url
 				@search.city.get_nearby if @search.city.nearby_cities.empty?
 				flash[:success] = "Updated"
 				redirect_to user_search_path(current_user.id, @search.id)
@@ -66,8 +64,8 @@ class SearchesController < ApplicationController
 																		 :category_id, 
 																		 :city_id, 
 																		 :query, 
-																		 :price_low, 
-																		 :price_high)
+																		 :min_price, 
+																		 :max_price)
 		end
 
 		
