@@ -4,6 +4,7 @@
 
 * {
 	font-family: 'Noto Sans', sans-serif;
+	color: #000;
 }
 
 html,
@@ -12,17 +13,24 @@ body {
 	padding: 0;
 }
 
+div {
+	box-sizing: border-box;
+}
+
 .container {
 	width: 100%;
 }
 
 a {
 	text-decoration: none;
-	color: #456485;
+}
+
+.header-links {
+	padding: 17px;
 }
 
 a:hover {
-	text-decoration: underline;
+	color: #666;
 }
 
 .main-header {	
@@ -40,6 +48,24 @@ a:hover {
 	z-index: 10;
 }
 
+.header-right {
+	position: absolute;
+	right: 6px;
+	a {
+		padding: 2px 5px 2px 6px;
+		box-sizing: border-box;
+	}
+	:not(:first-child) {
+		border-left: 1px solid black;
+	}
+}
+
+.header-left {
+	position: absolute;
+	left: 11px;
+}
+
+
 .landing {
 	position: absolute;
 	top: 90px;
@@ -50,6 +76,7 @@ a:hover {
 	background-size: cover;
 	background-position: center-left;
 	z-index: -10;
+	box-sizing: border-box;
 }
 
 .overlay {
@@ -59,34 +86,61 @@ a:hover {
 	right: 0;
 	height: 457px;
 	background: rgba(80, 80, 80, 0.6);
-
+	z-index: -9;
 }
 
-
-.content {
+.landing-left {
+	position: absolute;
+	padding: 40px;
+	top: 0;
+	left: 0;
 	width: 60%;
-	margin: 50px auto;
-	padding: 20px;
-	.heading {
-		text-align: center;
-		color:white;
-		font-weight: bold;
-		letter-spacing: .1em;
+	height: 100%;
+	text-align: center;
+}
 
+.landing-right {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 40%;
+	height: 100%;
+	text-align: center;
+	label {
+		color: white;
 	}
-	.subheading {
-		position: relative;
-		bottom: 0;
-		text-align: center;
-		color:white;
-		font-weight: bold;
-		letter-spacing: .1em;
+	form {
+		text-align: left;
+		height: 100%;
+		padding: 40px;
+		box-sizing: border-box;
+		input {
+			height: 33px;
+			width: 100%;
+			border: none;
+		}
 	}
+}
+
+.greeting {
+	position: relative;
+	margin-top: 40px;
+}
+
+.heading {	
+	
+	color: white;
+	font-weight: bold;
+	letter-spacing: .1em;
+
+}
+.subheading {
+	color:white;
+	font-weight: bold;
+	letter-spacing: .1em;
 }
 
 .info {
-	height: 2000px;
-	width: 100%;
 }
 
 .searches {
