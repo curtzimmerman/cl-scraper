@@ -1,13 +1,13 @@
-<%= f.label :title %>
-<%= f.text_field :title %>
+<%= f.label :title %><br>
+<%= f.text_field :title %><br>
 
-<%= f.label :category_id %>
-<%= f.select :category_id, options_for_select(@search_category_options) %>
+<%= f.label :category_id %><br>
+<%= f.select :category_id, options_for_select(@search_category_options) %><br>
 
-<%= f.label :city_id, value: "Home Location" %>
-<%= f.select :city_id , options_for_select(@search_city_options) %>
+<%= f.label :city_id, value: "Home Location" %><br>
+<%= f.select :city_id , options_for_select(@search_city_options) %><br>
 
-<%= f.label :query %>
-<%= f.text_field :query %>
+<%= f.label :query %><br>
+<%= f.text_field :query %><br>
 
-<%= f.submit "Submit" %>
+<%= f.submit "Submit" %><br>
