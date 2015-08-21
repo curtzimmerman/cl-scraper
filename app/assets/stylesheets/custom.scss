@@ -106,18 +106,29 @@ a:hover {
 	width: 40%;
 	height: 100%;
 	text-align: center;
-	label {
-		color: white;
-	}
 	form {
 		text-align: left;
+		display: block;
 		height: 100%;
 		padding: 40px;
 		box-sizing: border-box;
+		label {
+			display: inline-block;
+			margin-top: 5px;
+			color: white;
+		}
 		input {
 			height: 33px;
 			width: 100%;
 			border: none;
+		}
+		input[type=submit] {
+			height: 30px;
+			width: 120px;
+			margin-top: 28px;
+			border: 0;
+			background: #ccc;
+			float: right;
 		}
 	}
 }
