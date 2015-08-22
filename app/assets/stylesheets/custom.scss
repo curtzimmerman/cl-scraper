@@ -74,7 +74,7 @@ a:hover {
 	height: 457px;
 	background: url('/assets/Kelafonia_Greece_by_Mic.jpg');
 	background-size: cover;
-	background-position: center-left;
+	background-position: 50% 30%;
 	z-index: -10;
 	box-sizing: border-box;
 }
@@ -151,7 +151,35 @@ a:hover {
 	letter-spacing: .1em;
 }
 
+/*====== home information ======*/
+
 .info {
+	position: absolute;
+	top: 547px;
+	left: 0;
+	height: 600px;
+	width: 100%;
+}
+
+.info-left {
+	position: absolute;
+	left: 0%;
+	width: 33.333%;
+	height: 100%;
+}
+
+.info-center {
+	position: absolute;
+	left: 33.333%;
+	width: 33.333%;
+	height: 100%;
+}
+
+.info-right {
+	position: absolute;
+	right: 0;
+	width: 33.333%;
+	height: 100%;
 }
 
 .searches {
