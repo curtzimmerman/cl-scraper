@@ -15,10 +15,12 @@ body {
 
 div {
 	box-sizing: border-box;
+	padding: 0;
 }
 
-.container {
-	width: 100%;
+.wrapper {
+	position: relative;
+	min-height: 100%;
 }
 
 a {
@@ -44,7 +46,6 @@ a:hover {
 	box-shadow: 0 4px 3px -4px #000;
 	background: white;
 	padding: 9px;
-	box-sizing: border-box;
 	z-index: 10;
 }
 
@@ -76,7 +77,6 @@ a:hover {
 	background-size: cover;
 	background-position: 50% 30%;
 	z-index: -10;
-	box-sizing: border-box;
 }
 
 .overlay {
@@ -106,6 +106,7 @@ a:hover {
 	width: 40%;
 	height: 100%;
 	text-align: center;
+	max-width: 600px;
 	form {
 		text-align: left;
 		display: block;
@@ -139,7 +140,7 @@ a:hover {
 }
 
 .heading {	
-	
+	font-size: 3rem;
 	color: white;
 	font-weight: bold;
 	letter-spacing: .1em;
@@ -159,27 +160,43 @@ a:hover {
 	left: 0;
 	height: 600px;
 	width: 100%;
+	padding-top: 10px;
+	padding-bottom: 100px;
+	text-align: center;
+	span {
+		font-size: 2rem;
+		display: block;
+	}
+	p {
+		padding: 0 50px;
+		font-size: 1rem;
+	}
+}
+
+.info-top {
+	width: 100%;
+	height: 100px;
 }
 
 .info-left {
 	position: absolute;
 	left: 0%;
 	width: 33.333%;
-	height: 100%;
+	height: 500px;
 }
 
 .info-center {
 	position: absolute;
 	left: 33.333%;
 	width: 33.333%;
-	height: 100%;
+	height: 500px;
 }
 
 .info-right {
 	position: absolute;
 	right: 0;
 	width: 33.333%;
-	height: 100%;
+	height: 500px;
 }
 
 .searches {
@@ -200,4 +217,20 @@ td {
 .alert {
 	border: 1px solid black;
 	background: #d7d7d7;
+}
+
+/*====== Footer ======*/
+footer {
+	position: absolute;
+	top: 1147px;
+	width: 100%;
+	height: 100px;
+	background: #000;
+	p {
+		position: absolute;
+		right: 5px;
+		bottom: 0;
+		font-size: .75rem;
+		color: white;
+	}
 }
