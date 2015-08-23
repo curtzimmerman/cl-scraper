@@ -14,21 +14,18 @@ body {
 }
 
 div {
+	display: block;
 	box-sizing: border-box;
 	padding: 0;
 }
 
 .wrapper {
-	position: relative;
 	min-height: 100%;
+	height: auto !important;
 }
 
 a {
 	text-decoration: none;
-}
-
-.header-links {
-	padding: 17px;
 }
 
 a:hover {
@@ -36,22 +33,19 @@ a:hover {
 }
 
 .main-header {	
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
+	position: relative;
 	height: 90px;
 	border-bottom: 1px solid #444;
 	font-size: 1.25em;
 	box-shadow: 0 4px 3px -4px #000;
 	background: white;
-	padding: 9px;
 	z-index: 10;
 }
 
 .header-right {
 	position: absolute;
-	right: 6px;
+	top: 31px;
+	right: 0;
 	a {
 		padding: 2px 5px 2px 6px;
 		box-sizing: border-box;
@@ -63,15 +57,13 @@ a:hover {
 
 .header-left {
 	position: absolute;
+	top: 31px;
 	left: 11px;
 }
 
 
 .landing {
-	position: absolute;
-	top: 90px;
-	left:0;
-	right: 0;
+	position: relative;
 	height: 457px;
 	background: url('/assets/Kelafonia_Greece_by_Mic.jpg');
 	background-size: cover;
@@ -80,10 +72,6 @@ a:hover {
 }
 
 .overlay {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
 	height: 457px;
 	background: rgba(80, 80, 80, 0.6);
 	z-index: -9;
@@ -91,12 +79,12 @@ a:hover {
 
 .landing-left {
 	position: absolute;
-	padding: 40px;
 	top: 0;
 	left: 0;
 	width: 60%;
 	height: 100%;
 	text-align: center;
+	box-sizing: border-box;
 }
 
 .landing-right {
@@ -129,13 +117,11 @@ a:hover {
 			margin-top: 28px;
 			border: 0;
 			background: #ccc;
-			float: right;
 		}
 	}
 }
 
 .greeting {
-	position: relative;
 	margin-top: 40px;
 }
 
@@ -155,13 +141,9 @@ a:hover {
 /*====== home information ======*/
 
 .info {
-	position: absolute;
-	top: 547px;
-	left: 0;
+	position: relative;
 	height: 600px;
 	width: 100%;
-	padding-top: 10px;
-	padding-bottom: 100px;
 	text-align: center;
 	span {
 		font-size: 2rem;
@@ -174,27 +156,29 @@ a:hover {
 }
 
 .info-top {
+	padding: 20px;
 	width: 100%;
 	height: 100px;
+	p {
+		margin: 0;
+		padding: 0;
+	}
 }
 
 .info-left {
-	position: absolute;
-	left: 0%;
+	float: left;
 	width: 33.333%;
 	height: 500px;
 }
 
 .info-center {
-	position: absolute;
-	left: 33.333%;
+	float: left;
 	width: 33.333%;
 	height: 500px;
 }
 
 .info-right {
-	position: absolute;
-	right: 0;
+	float: left;
 	width: 33.333%;
 	height: 500px;
 }
@@ -221,15 +205,13 @@ td {
 
 /*====== Footer ======*/
 footer {
-	position: absolute;
-	top: 1147px;
+	position: relative;
 	width: 100%;
 	height: 100px;
 	background: #000;
+	margin-top: 10px;
 	p {
-		position: absolute;
-		right: 5px;
-		bottom: 0;
+		margin: 0;
 		font-size: .75rem;
 		color: white;
 	}
