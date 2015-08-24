@@ -2,7 +2,6 @@
 	<%= link_to "Craigslist Scraper", root_path, class: "header-left" %>
 	<div class="header-right">
 		<%= link_to "Home", root_path %>
-		<%= link_to "Help", help_path %>
 		<% if logged_in? %>
 			<%= link_to "Searches", user_path(current_user) %>
 			<%= link_to "Log out", logout_path, method: :delete %> - 

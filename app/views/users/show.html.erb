@@ -1,14 +1,18 @@
 <% provide(:title, current_user.email) %>
 
-<div class="content">
-	<h1 class="heading">Searches</h1>
-
+<div class="user">
+	<div class="user-head">
+		<h1 class="heading">Searches</h1>
+	</div>
 	<div class="searches">
 		<%= link_to "New Search", new_user_search_path(@user.id) %>
 		<table>
-			<th>Title</th>
-			<th>Location</th>
-			<th>Query</th>
+			<thead>
+				<th>Title</th>
+				<th>Location</th>
+				<th>Query</th>
+				<th></th>
+			</thead>
 		<%= render partial: "searches/search", collection: @user.searches %>
 		</table>
 	</div>
