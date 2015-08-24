@@ -14,7 +14,6 @@ body {
 }
 
 div {
-	display: block;
 	box-sizing: border-box;
 	padding: 0;
 }
@@ -32,6 +31,8 @@ a:hover {
 	color: #666;
 }
 
+/*====== header ====== */
+
 .main-header {	
 	position: relative;
 	height: 90px;
@@ -39,7 +40,6 @@ a:hover {
 	font-size: 1.25em;
 	box-shadow: 0 4px 3px -4px #000;
 	background: white;
-	z-index: 10;
 }
 
 .header-right {
@@ -61,6 +61,7 @@ a:hover {
 	left: 11px;
 }
 
+/*====== Landing ====== */
 
 .landing {
 	position: relative;
@@ -68,13 +69,11 @@ a:hover {
 	background: url('/assets/Kelafonia_Greece_by_Mic.jpg');
 	background-size: cover;
 	background-position: 50% 30%;
-	z-index: -10;
 }
 
 .overlay {
 	height: 457px;
 	background: rgba(80, 80, 80, 0.6);
-	z-index: -9;
 }
 
 .landing-left {
@@ -110,6 +109,8 @@ a:hover {
 			height: 33px;
 			width: 100%;
 			border: none;
+			padding: 2px;
+			padding-left: 5px;
 		}
 		input[type=submit] {
 			height: 30px;
@@ -182,6 +183,8 @@ a:hover {
 	width: 33.333%;
 	height: 500px;
 }
+
+/*====== Searches ====== */
 
 .searches {
 	margin: 0 .25em 1em;
