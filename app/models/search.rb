@@ -40,7 +40,6 @@ class Search < ActiveRecord::Base
 
 		#get array of all ids of hits currently in the database to check against
 		current_hits = self.hits.pluck('data_pid')
-
 		#iterate over every hit on the page
 		#TODO: add checking for pagination
 		doc.css("div.rightpane div.content p.row").each do |row|
@@ -52,9 +51,13 @@ class Search < ActiveRecord::Base
 					price: row.css('span.txt span.l2 span.price').text.tr("$", "").to_i,
 					neighborhood: row.css('span.txt span.l2 span.pnr small').text,
 					checked: true)
-			else
-				#if the hit is included in current_hits, set checked to true since the listing is still available
-				Hit.where(data_pid: row['data-pid']).update_all(checked: true)
+			elsif
+				#if the document does contain the pid and the current hits listing does also, update the attributes
+				Hit.find_by_data_pid(row['data-pid']).update_attributes(
+					title: row.css('a.hdrlnk')[0].text,
+					price: row.css('span.txt span.l2 span.price').text.tr("$", "").to_i,
+					neighborhood: row.css('span.txt span.l2 span.pnr small').text,
+					checked: true)
 			end
 		end
 	end
