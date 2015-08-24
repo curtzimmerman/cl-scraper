@@ -1,11 +1,13 @@
 <% provide(:title, current_user.email) %>
 
 <div class="user">
-	<div class="user-head">
+	<div class="head">
 		<h1 class="heading">Searches</h1>
 	</div>
-	<div class="searches">
-		<%= link_to "New Search", new_user_search_path(@user.id) %>
+	<div class="content">
+		<div class="links">
+			<%= link_to "New Search", new_user_search_path(@user.id) %>
+		</div>
 		<table>
 			<thead>
 				<th>Title</th>

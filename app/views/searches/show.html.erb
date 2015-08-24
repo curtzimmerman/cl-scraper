@@ -1,17 +1,21 @@
 <% provide(:title, @search.title.titleize) %>
 
-<h1> <%= @search.title.titleize %> </h1>
-<%= link_to "Edit..", edit_user_search_path(current_user.id, @search.id) %>
-<%= link_to "Refresh Hits", user_search_update_hits_path(current_user.id, @search.id), method: :post %>
-<div class="content">
-	<h1 class="heading center"> <%= @search.title.titleize %> </h1>
-	<%= link_to "Back to Searches...", user_searches_path, class: "subheading" %>
+<div class="head">
+	<h1 class="heading"> <%= @search.title.titleize %> </h1>
+	<h2 class="subheading"> <%= @search.city.name.titleize %> </h3>
+</div>
+<div class="hits content">
+	<div class="links">
+		<%= link_to "Refresh Hits", user_search_update_hits_path(current_user.id, @search.id), method: :post %>
+		<%= link_to "Edit", edit_user_search_path(current_user.id, @search.id) %>
+		<%= link_to "Back to Searches", user_path(current_user) %>
+	</div>
 	<table>
-		<th>Title</th>
-		<th>Price</th>
-		<th>Location</th>
-		<th>Neighborhood</th>
-		<th>URL</th>
+		<thead>
+			<th>Title</th>
+			<th>Price</th>
+			<th>Location</th>
+		</thead>
 		<%= render partial: 'hits/hit', collection: @search.hits %>
 	</table>
 </div>
