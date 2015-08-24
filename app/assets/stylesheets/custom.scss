@@ -9,26 +9,22 @@
 
 html,
 body {
+	height: 100%;
 	margin: 0;
 	padding: 0;
 }
 
-div {
+h1, h2, h3, h4, h5, h6, div, p {
 	box-sizing: border-box;
 	padding: 0;
+	margin: 0;
 }
 
 .wrapper {
-	min-height: 100%;
-	height: auto !important;
-}
-
-a {
-	text-decoration: none;
-}
-
-a:hover {
-	color: #666;
+	position: relative;
+	min-height: 100% !important;
+	margin: 0;
+	padding: 0 0 100px;
 }
 
 /*====== header ====== */
@@ -40,6 +36,12 @@ a:hover {
 	font-size: 1.25em;
 	box-shadow: 0 4px 3px -4px #000;
 	background: white;
+	a {
+	text-decoration: none;
+	}
+	a:hover {
+	color: #666;
+	}
 }
 
 .header-right {
@@ -90,36 +92,11 @@ a:hover {
 	position: absolute;
 	top: 0;
 	right: 0;
+	padding: 40px;
 	width: 40%;
 	height: 100%;
 	text-align: center;
 	max-width: 600px;
-	form {
-		text-align: left;
-		display: block;
-		height: 100%;
-		padding: 40px;
-		box-sizing: border-box;
-		label {
-			display: inline-block;
-			margin-top: 5px;
-			color: white;
-		}
-		input {
-			height: 33px;
-			width: 100%;
-			border: none;
-			padding: 2px;
-			padding-left: 5px;
-		}
-		input[type=submit] {
-			height: 30px;
-			width: 120px;
-			margin-top: 28px;
-			border: 0;
-			background: #ccc;
-		}
-	}
 }
 
 .greeting {
@@ -184,6 +161,34 @@ a:hover {
 	height: 500px;
 }
 
+/*====== Form ====== */
+
+form {
+	text-align: left;
+	display: block;
+	height: 100%;
+	box-sizing: border-box;
+	label {
+		display: inline-block;
+		margin-top: 5px;
+		color: white;
+	}
+	input {
+		height: 33px;
+		width: 100%;
+		border: none;
+		padding: 2px;
+		padding-left: 5px;
+	}
+	input[type=submit] {
+		height: 30px;
+		width: 120px;
+		margin-top: 28px;
+		border: 0;
+		background: #ccc;
+	}
+}
+
 /*====== Searches ====== */
 
 .searches {
@@ -202,18 +207,50 @@ td {
 
 /* Flash styling */
 .alert {
+	text-align: center;
 	border: 1px solid black;
 	background: #d7d7d7;
 }
 
+/*====== Login ======*/
+
+.login {
+	position: relative;
+	width: 100%;
+	text-align: center;
+	margin: auto;
+	padding: 40px;
+	background: #666;
+	color: white;
+	height: 100%;
+	.heading {
+		margin-left: 20px;
+	}
+	a {
+		color: #FF9900;
+	}
+}
+
+.login-center {
+	height: 100%;
+	margin: auto;
+	width: 60%;
+	color: white;
+}
+
 /*====== Footer ======*/
 footer {
-	position: relative;
+	position: absolute;
+	bottom: 0;
+	left: 0;
 	width: 100%;
 	height: 100px;
 	background: #000;
 	margin-top: 10px;
 	p {
+		position: absolute;
+		bottom: 5px;
+		right: 5px;
 		margin: 0;
 		font-size: .75rem;
 		color: white;
