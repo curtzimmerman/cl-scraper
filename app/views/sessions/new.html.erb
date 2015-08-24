@@ -1,15 +1,18 @@
 <% provide(:title, "Log In") %>
+<div class="login">
+	<div class="login-center">
+		<h1 class="heading">Log In</h1>
+		<div class="login-form">
+			<%= form_for(:session, url: login_path) do |f| %>
+				<%= f.label "email" %><br>
+				<%= f.email_field "email" %><br>
 
-<h1>Log In</h1>
+				<%= f.label "password" %><br>
+				<%= f.password_field "password" %><br>
 
-<%= form_for(:session, url: login_path) do |f| %>
-	<%= f.label "email" %>
-	<%= f.email_field "email" %>
-
-	<%= f.label "password" %>
-	<%= f.password_field "password" %>
-
-	<%= f.submit "Log in" %>
-
-<% end %>
-New User? <%= link_to "Sign up", signup_path %>
+				<%= f.submit "Log in" %><br>
+			<% end %>
+		</div>
+		New User? <%= link_to "Sign up", signup_path %>
+	</div>
+</div>

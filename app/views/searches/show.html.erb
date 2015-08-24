@@ -3,12 +3,15 @@
 <h1> <%= @search.title.titleize %> </h1>
 <%= link_to "Edit..", edit_user_search_path(current_user.id, @search.id) %>
 <%= link_to "Refresh Hits", user_search_update_hits_path(current_user.id, @search.id), method: :post %>
-
-<table>
-	<th>Title</th>
-	<th>Price</th>
-	<th>Location</th>
-	<th>Neighborhood</th>
-	<th>URL</th>
-	<%= render partial: 'hits/hit', collection: @search.hits %>
-</table>
+<div class="content">
+	<h1 class="heading center"> <%= @search.title.titleize %> </h1>
+	<%= link_to "Back to Searches...", user_searches_path, class: "subheading" %>
+	<table>
+		<th>Title</th>
+		<th>Price</th>
+		<th>Location</th>
+		<th>Neighborhood</th>
+		<th>URL</th>
+		<%= render partial: 'hits/hit', collection: @search.hits %>
+	</table>
+</div>
