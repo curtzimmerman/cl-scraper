@@ -60,7 +60,12 @@ class SearchesController < ApplicationController
 	private
 
 		def search_params
-			params.require(:search).permit(:title, :category_id, :city_id, :query).merge(url: "#{City.find(params[:search][:city_id]).url}/search/#{Category.find(params[:search][:category_id]).code}?query=#{params[:search][:query].tr(" ", "+")}")
+			params.require(:search).permit(:title, 
+																		 :category_id, 
+																		 :city_id, 
+																		 :query, 
+																		 :min_price, 
+																		 :max_price)
 		end
 
 		
