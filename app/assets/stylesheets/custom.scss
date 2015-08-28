@@ -236,6 +236,8 @@ table {
 	border: 1px solid black;
 	width: 100%;
 	color: black;
+	max-width: 1000px;
+	margin: 0 auto;
 	a {
 		color: black;
 	}
@@ -261,6 +263,18 @@ td {
 	background: #d7d7d7;
 }
 
+
+/*====== New Searches ====== */
+
+.new-search {
+	background: #676767;
+	margin: 0 auto;
+	padding: 60px;
+	width: 50%;
+	min-width: 500px;
+}
+
+
 /*====== Login ======*/
 
 .login {
@@ -283,7 +297,7 @@ td {
 .login-center {
 	height: 100%;
 	margin: auto;
-	width: 60%;
+	width: 20%;
 	color: white;
 }
 
