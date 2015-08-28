@@ -241,6 +241,9 @@ table {
 	a {
 		color: black;
 	}
+	a:visited {
+		color: purple;
+	}
 	thead {
 		background: #676767;
 		th {
@@ -266,7 +269,7 @@ td {
 
 /*====== New Searches ====== */
 
-.new-search {
+.search-form {
 	background: #676767;
 	margin: 0 auto;
 	padding: 60px;

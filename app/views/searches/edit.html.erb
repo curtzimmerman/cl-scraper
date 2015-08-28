@@ -1,7 +1,12 @@
 <% provide(:title, "Edit Search") %>
 
-<h1>Edit Search</h1>
-
-<%= form_for :search, url: user_search_path(current_user.id, @search.id), method: :patch do |f| %>
-	<%= render partial: "searches/search_form.html.erb", locals: { f: f } %>
-<% end %>
+<div class="head">
+	<h1 class="heading">Edit Search</h1>
+</div>
+<div class="content">
+	<div class="search-form">
+		<%= form_for :search, url: user_search_path(current_user.id, @search.id), method: :patch do |f| %>
+			<%= render partial: "searches/search_form.html.erb", locals: { f: f } %>
+		<% end %>
+	</div>
+</div>
