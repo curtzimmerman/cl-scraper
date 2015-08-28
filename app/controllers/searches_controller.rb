@@ -42,7 +42,7 @@ class SearchesController < ApplicationController
 			if @search.save
 				@search.city.get_nearby if @search.city.nearby_cities.empty?
 				flash[:success] = "Updated"
-				redirect_to user_search_path(current_user.id, @search.id)
+				redirect_to user_path(current_user.id)
 				#delete all prior hits for search
 				@search.hits.delete_all
 			else
