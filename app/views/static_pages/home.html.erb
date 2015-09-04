@@ -3,19 +3,21 @@
 <div class="jumbotron">
 	<div class="container">
 		<h1>Craigslist Scraper</h1>
-		<p>Enter some searches, get emailed about new posts in your area</p>
-
+		<p class="lead">Enter some searches, get emailed about new posts in your area</p>
 		<% if !logged_in? %>
+		
 			<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signup-modal">Sign up</button>
+
+			<button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#login-modal">Log in</button>
+
 			<%= form_for @user do |f| %>
 				<%= render partial: 'users/user_form.html.erb', locals: { f: f} %>
 			<% end %>
 
-			<button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#login-modal">Log in</button>
 			<%= form_for(:session, url: login_path) do |f| %>
 				<%= render partial: 'sessions/session.html.erb', locals: { f: f} %>
 			<% end %>
-			
+
 		<% end %>
 	</div>
 </div>
