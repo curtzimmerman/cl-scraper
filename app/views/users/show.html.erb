@@ -3,13 +3,15 @@
 <div class="container">
 	<h1>Searches</h1>
 	<%= link_to "New Search", new_user_search_path(@user.id) %>
-	<table>
+	<table class="table">
 		<thead>
 			<th>Title</th>
 			<th>Location</th>
 			<th>Query</th>
 			<th></th>
 		</thead>
-	<%= render partial: "searches/search", collection: @user.searches %>
+		<tbody class="table-striped">
+			<%= render partial: "searches/search", collection: @user.searches %>
+		</tbody>
 	</table>
 </div>

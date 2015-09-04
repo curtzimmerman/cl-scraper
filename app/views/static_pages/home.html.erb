@@ -18,7 +18,7 @@
 				<%= render partial: 'sessions/session.html.erb', locals: { f: f} %>
 			<% end %>
 		<% else %>
-			<%= button_to 'Go forth!', user_path(current_user), class: "btn btn-primary btn-lg", method: :get %>
+			<%= link_to 'Go forth!', user_path(current_user), class: "btn btn-primary btn-lg", method: :get %>
 		<% end %>
 	</div>
 </div>
