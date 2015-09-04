@@ -1,13 +1,15 @@
-<div class="header-links">
-	<%= link_to "Craigslist Scraper", root_path, class: "header-left" %>
-	<div class="header-right">
-		<%= link_to "Home", root_path %>
-		<% if logged_in? %>
-			<%= link_to "Searches", user_path(current_user) %>
-			<%= link_to "Log out", logout_path, method: :delete %> - 
-			<%= @current_user.email %>
-		<% else %>
-			<%= link_to "Log in", login_path %>
-		<% end %>
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<%= link_to "Craigslist Scraper", root_path, class: "navbar-brand" %>
+		<ul class="nav navbar-nav navbar-right">
+			<li><%= link_to "Home", root_path %></li>
+			<% if logged_in? %>
+				<li><%= link_to "Searches", user_path(current_user) %></li>
+				<li><%= link_to "Log out", logout_path, method: :delete %> - 
+				<%= @current_user.email %></li>
+			<% else %>
+				<li><%= link_to "Log in", login_path %></li>
+			<% end %>
+		</ul>
 	</div>
-</div>
+</nav>

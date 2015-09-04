@@ -2,21 +2,15 @@
 
 <div class="jumbotron">
 	<div class="container">
-		<div class="<%= logged_in? ? 'landing-center' : 'landing-left' %>">
-			<div class="greeting">
-				<h1 class="heading">Craigslist Scraper</h1>
-				<h2 class="subheading">Enter some searches, get emailed about new posts in your area</h2>
-			</div>
-		</div>
+		<h1>Craigslist Scraper</h1>
+		<p>Enter some searches, get emailed about new posts in your area</p>
 		<% if !logged_in? %>
-			<div class="landing-right">
-			
-				<%= form_for @user do |f| %>
-					<%= render partial: 'users/user_form.html.erb', locals: { f: f} %>
-				<% end %>
-			</div>
+			<%= form_for @user do |f| %>
+				<%= render partial: 'users/user_form.html.erb', locals: { f: f} %>
+			<% end %>
 		<% end %>
 	</div>
+</div>
 
 </div>
 <div class="info">
