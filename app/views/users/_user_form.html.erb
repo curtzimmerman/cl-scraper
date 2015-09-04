@@ -1,10 +1,24 @@
-<%= f.label :email %><br>
-<%= f.email_field :email %><br>
-
-<%= f.label :password %><br>
-<%= f.password_field :password %><br>
-
-<%= f.label :password_confirmation %><br>
-<%= f.password_field :password_confirmation %><br>
-
-<%= f.submit "Sign up" %>
+<div id="signup-modal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h2>Sign up</h2>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<%= f.label :email %>
+					<%= f.email_field :email, class: "form-control", placeholder: "Email" %>
+				</div>
+				<div class="form-group">
+					<%= f.label :password %>
+					<%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+				</div>
+				<div class="form-group">
+					<%= f.label :password_confirmation %>
+					<%= f.password_field :password_confirmation, class: "form-control", placeholder: "Password Confirmation" %>
+				</div>
+				<%= f.submit "Submit", class: "btn btn-primary" %>
+			</div>
+		</div>
+	</div>
+</div>

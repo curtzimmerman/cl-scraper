@@ -4,34 +4,18 @@
 	<div class="container">
 		<h1>Craigslist Scraper</h1>
 		<p>Enter some searches, get emailed about new posts in your area</p>
-		<% if !logged_in? %>
-			<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#login-modal">Log in</button>
-			<div id="login-modal" class="modal fade" role="dialog">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h2>Log in</h2>
-						</div>
-						<div class="modal-body">
-							<%= form_for @user do |f| %>
-								<%= render partial: 'users/user_form.html.erb', locals: { f: f} %>
-							<% end %>
-						</div>
-					</div>
-				</div>
-			</div>
-		<% end %>
-	</div>
-</div>
 
-</div>
-<div class="info">
-	<div class="info-top">
-	</div>
-	<div class="info-left">
-	</div>
-	<div class="info-center">
-	</div>
-	<div class="info-right">
+		<% if !logged_in? %>
+			<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signup-modal">Sign up</button>
+			<%= form_for @user do |f| %>
+				<%= render partial: 'users/user_form.html.erb', locals: { f: f} %>
+			<% end %>
+
+			<button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#login-modal">Log in</button>
+			<%= form_for(:session, url: login_path) do |f| %>
+				<%= render partial: 'sessions/session.html.erb', locals: { f: f} %>
+			<% end %>
+			
+		<% end %>
 	</div>
 </div>

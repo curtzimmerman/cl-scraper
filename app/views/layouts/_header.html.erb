@@ -5,10 +5,9 @@
 			<li><%= link_to "Home", root_path %></li>
 			<% if logged_in? %>
 				<li><%= link_to "Searches", user_path(current_user) %></li>
-				<li><%= link_to "Log out", logout_path, method: :delete %> - 
-				<%= @current_user.email %></li>
+				<li><%= link_to "Log out", logout_path, method: :delete %></li>
 			<% else %>
-				<li><%= link_to "Log in", login_path %></li>
+				<li><%= link_to "Log in", "#login-modal", "data-toggle": "modal" %></li>
 			<% end %>
 		</ul>
 	</div>
