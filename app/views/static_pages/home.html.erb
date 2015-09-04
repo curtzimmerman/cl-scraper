@@ -1,33 +1,31 @@
 <% provide(:title, "Home") %>
 
-<div class="landing">
-	<div class="overlay"></div>
-	<div class="<%= logged_in? ? 'landing-center' : 'landing-left' %>">
-		<div class="greeting">
-			<h1 class="heading">Craigslist Scraper</h1>
-			<h2 class="subheading">Enter some searches, get emailed about new posts in your area</h2>
+<div class="jumbotron">
+	<div class="container">
+		<div class="<%= logged_in? ? 'landing-center' : 'landing-left' %>">
+			<div class="greeting">
+				<h1 class="heading">Craigslist Scraper</h1>
+				<h2 class="subheading">Enter some searches, get emailed about new posts in your area</h2>
+			</div>
 		</div>
+		<% if !logged_in? %>
+			<div class="landing-right">
+			
+				<%= form_for @user do |f| %>
+					<%= render partial: 'users/user_form.html.erb', locals: { f: f} %>
+				<% end %>
+			</div>
+		<% end %>
 	</div>
-	<% if !logged_in? %>
-		<div class="landing-right">
-		
-			<%= form_for @user do |f| %>
-				<%= render partial: 'users/user_form.html.erb', locals: { f: f} %>
-			<% end %>
-		</div>
-	<% end %>
+
 </div>
 <div class="info">
 	<div class="info-top">
-		<p>-How It Works-</p>
 	</div>
 	<div class="info-left">
-		<p><span>First:</span>Create an account</p>
 	</div>
 	<div class="info-center">
-		<p><span>Next:</span>Think of some things to search for</p>
 	</div>
 	<div class="info-right">
-		<p><span>Aaaand:</span>We'll search nearby cities for you and report back!</p>
 	</div>
 </div>
