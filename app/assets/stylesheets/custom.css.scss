@@ -1,10 +1,18 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	margin-bottom: 50px;
+}
+
 .jumbotron {
 	text-align: center;
 }
-
 
 .center-block {
 	float: none;
@@ -12,4 +20,16 @@
 
 .form-group select {
 	background: #F8F8F8;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 50px;
+	background-color: #d2d2d2;
+	p {
+		padding: 20px 0;
+		line-height: 10px;
+	}
 }
