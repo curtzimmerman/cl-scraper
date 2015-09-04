@@ -3,7 +3,7 @@
 <div class="jumbotron">
 	<div class="container">
 		<h1>Craigslist Scraper</h1>
-		<p class="lead">Enter some searches, get emailed about new posts in your area</p>
+		<h3>Find what you're looking for</h3>
 		<% if !logged_in? %>
 		
 			<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signup-modal">Sign up</button>
@@ -17,7 +17,8 @@
 			<%= form_for(:session, url: login_path) do |f| %>
 				<%= render partial: 'sessions/session.html.erb', locals: { f: f} %>
 			<% end %>
-
+		<% else %>
+			<%= button_to 'Go forth!', user_path(current_user), class: "btn btn-primary btn-lg", method: :get %>
 		<% end %>
 	</div>
 </div>

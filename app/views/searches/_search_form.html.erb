@@ -1,19 +1,37 @@
-<%= f.label :title %><br>
-<%= f.text_field :title %><br>
+<div class="form-group">
+	<%= f.label :title %>
+<%= f.text_field :title, class: "form-control", placeholder: "Title" %>
+</div>
 
-<%= f.label :category_id %><br>
-<%= f.select :category_id, options_for_select(@search_category_options) %><br>
+<div class="row">
+	<div class="form-group col-sm-6">
+		<%= f.label :city_id, value: "Home Location" %>
+		<%= f.select :city_id , options_for_select(@search_city_options), {},  { class: "form-control" } %>
+	</div>
 
-<%= f.label :city_id, value: "Home Location" %><br>
-<%= f.select :city_id , options_for_select(@search_city_options) %><br>
+	<div class="form-group col-sm-6">
+		<%= f.label :category_id %>
+		<%= f.select :category_id, options_for_select(@search_category_options), {}, class: "form-control"%>
+	</div>
+</div>
 
-<%= f.label :query %><br>
-<%= f.text_field :query %><br>
+<div class="form-group">
+	<%= f.label :query %>
+	<%= f.text_field :query, class: "form-control", placeholder: "Query" %>
+</div>
 
-<%= f.label :min_price %><br>
-<%= f.text_field :min_price %><br>
+<div class="row">
+	<div class="form-group col-sm-4">
+		<%= f.label :min_price %>
+		<%= f.text_field :min_price, class: "form-control", placeholder: "Minimum Price" %>
+	</div>
 
-<%= f.label :max_price %><br>
-<%= f.text_field :max_price %><br>
+	<div class="form-group col-sm-4">
+		<%= f.label :max_price %>
+		<%= f.text_field :max_price, class: "form-control", placeholder: "Maximum Price" %>
+	</div>
+</div>
 
-<%= f.submit "Submit" %>
+<div class="form-group">
+	<%= f.submit "Submit", class: "btn btn-primary" %>
+</div>

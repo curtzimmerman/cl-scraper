@@ -1,11 +1,8 @@
 <% provide(:title, "New Search") %>
 
-<div class="head">
-	<h1 class="heading">New Search</h1>
-</div>
-<div class="content">
-	<div class="search-form">
-		<%= form_for :search, url: user_searches_path(current_user.id) do |f| %>
+<div class="container">
+	<h1 class="center-block">New Search</h1>
+		<%= form_for :search, url: user_searches_path(current_user.id), class: "form-horizontal" do |f| %>
 			<%= render partial: 'searches/search_form.html.erb', locals: { f: f } %>
 		<% end %>
 	</div>
