@@ -3,7 +3,7 @@
 	<td><%= get_name_by_id(search.city) %></td>
 	<td><%= search.query %></td>
 	<td>
-		<%= link_to "Edit", edit_user_search_path(current_user.id, search.id) %>
-		<%= link_to "Delete?", user_search_path(params[:id], search.id), method: :delete %>
+		<%= link_to "Edit", edit_user_search_path(current_user.id, search.id), class: "btn btn-default btn-xs" %>
+		<%= link_to "Delete?", user_search_path(params[:id], search.id), method: :delete, class: "btn btn-danger btn-xs" %>
 	</td>
 </tr>
