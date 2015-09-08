@@ -14,7 +14,8 @@ class SearchesController < ApplicationController
 			flash[:success] = "Search created"
 			redirect_to current_user
 		else
-			render 'new'
+			flash[:error] = "There are errors with your submission"
+			redirect_to new_user_search_path(current_user)
 		end
 	end
 
@@ -46,7 +47,8 @@ class SearchesController < ApplicationController
 				#delete all prior hits for search
 				@search.hits.delete_all
 			else
-				render 'edit'
+				flash[:error] = "There are errors with your submission"
+				redirect_to edit_user_search_path(current_user, params[:id])
 			end
 		end
 	end
