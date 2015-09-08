@@ -33,7 +33,7 @@ gem 'bootstrap-sass', '3.3'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'puma'
+gem 'unicorn'
 gem 'pg'
 
 group :development, :test do
