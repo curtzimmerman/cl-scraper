@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
 
   get "signup" => "users#new"
+  post "login" => "sessions#create"
   get "help" => "static_pages#help"
   delete "logout" => "sessions#destroy"
 end
